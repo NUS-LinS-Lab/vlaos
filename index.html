@@ -382,6 +382,9 @@
 </div>
 
 <br>
+<br>
+<hr class="rounded">
+
 
 <div class="rows">
   <h2 class="title is-3">VLA-OS Model Family</h2>
@@ -400,6 +403,12 @@
     We provide three kinds of task planning representations for six different manipulation tasks benchmarks: LIBERO, Deformable (real-world), 
     The Colosseum, FurnitureBench, DexArt, and PerAct2, as well as their data annotation codes. Please select a task to see its reasoning data visualization videos.
   </p>
+
+  <br>
+  <div class="columns is-centered has-text-centered">
+  <h2 class="title is-4">The LIBERO-Long Reasoning Dataset</h2>
+  </div>
+
     <div class="columns">
       <div class="column has-text-centered">
         <div class="select is-rounded">     
@@ -429,9 +438,12 @@
       </div>
     </div>
 
-    <p class="content has-text-centered">
-      The LIBERO-Long Reasoning Dataset.
-    </p>
+  <br>
+  <br>
+  <br>
+  <div class="columns is-centered has-text-centered">
+  <h2 class="title is-4">The Real World Deformable Object Manipulation Reasoning Dataset</h2>
+  </div>
 
     <div class="columns">
       <div class="column has-text-centered">
@@ -455,9 +467,12 @@
       </div>
     </div>
 
-    <p class="content has-text-centered">
-      The Real World Deformable Object Manipulation Reasoning Dataset.
-    </p>
+  <br>
+  <br>
+  <br>
+  <div class="columns is-centered has-text-centered">
+  <h2 class="title is-4">The Colosseum Manipulation Reasoning Dataset</h2>
+  </div>
 
     <div class="columns">
       <div class="column has-text-centered">
@@ -498,9 +513,12 @@
       </div>
     </div>
 
-    <p class="content has-text-centered">
-      The Colosseum Manipulation Reasoning Dataset.
-    </p>    
+  <br>
+  <br>
+  <br>
+  <div class="columns is-centered has-text-centered">
+  <h2 class="title is-4">The FurnitureBench Reasoning Dataset</h2>
+  </div>
 
     <div class="columns">
       <div class="column has-text-centered">
@@ -525,9 +543,12 @@
       </div>
     </div>
 
-    <p class="content has-text-centered">
-      The FurnitureBench Manipulation Reasoning Dataset.
-    </p>        
+  <br>
+  <br>
+  <br>
+  <div class="columns is-centered has-text-centered">
+  <h2 class="title is-4">The DexArt Dexterous Manipulation Reasoning Dataset</h2>
+  </div>
 
     <div class="columns">
       <div class="column has-text-centered">
@@ -552,10 +573,12 @@
       </div>
     </div>
 
-    <p class="content has-text-centered">
-      The DexArt Dexterous Manipulation Reasoning Dataset.
-    </p>    
-
+  <br>
+  <br>
+  <br>
+  <div class="columns is-centered has-text-centered">
+  <h2 class="title is-4">The PerAct2 Dual-Arm Manipulation Reasoning Dataset</h2>
+  </div>
     <div class="columns">
       <div class="column has-text-centered">
         <div class="select is-rounded">     
@@ -578,9 +601,6 @@
       </div>
     </div>
 
-    <p class="content has-text-centered">
-      The DexArt Dexterous Manipulation Reasoning Dataset.
-    </p>   
 </div>
 
 
@@ -590,7 +610,7 @@
     <div class="column is-four-fifths">
       <h2 class="title is-1">Experiment Findings</h2>
       <div class="content has-text-justified">
-        <p>
+        <p style="font-size: 19px;">
           We perform systematic and controllable experiments to investigate differnet perspectives of task planning on VLA models with our VLA-OS model family and 
           annotated datasets. The findings are shown as follows.
         </p>
@@ -608,6 +628,10 @@
     OpenVLA, fine-tuned CoT-VLA, fine-tuned DiT Policy, and fine-tuned 
     π_0 and its variant π_0-FAST. Results are shown as follows.
   </p>
+  <br>
+  <img src="media/figures/finding1.png" class="method-image" />
+  <br>
+  <br>
 
   <p class="content has-text-justified">
     We can see that VLA-OS-A-S performs better (+13.2%) than Diffusion Policy (trained from scratch) and the fine-tuned OpenVLA 
@@ -615,8 +639,8 @@
     model is worse than the SOTA method, these results sufficiently demonstrate that our model design is excellent and competitive. 
     Note that VLA-OS-A-S is <strong>trained from scratch</strong> and utilizes only <strong>a 0.5B LLM backbone</strong>. 
   </p>  
-  <img src="media/figures/finding1.png" class="method-image" />
 </div>
+<br>
 
 <hr class="rounded">
 <div class="rows">
@@ -633,15 +657,17 @@
   <p class="content has-text-justified">
     The implicit planning paradigm leverages various auxiliary task planning objectives as additional losses for training, 
     and during inference, there is no difference between it and ActionOnly-VLA, thus it brings performance improvement. 
-    This shows that \textbf{using task planning as auxiliary losses} can improve the performance. However, the explicit 
+    This shows that using task planning as auxiliary losses can improve the performance. However, the explicit 
     planning paradigm will have to first complete the entire planning process before the action head generation during inference, 
-    and this will bring severe \textbf{planning accumulation error} issues. Typically, the length of planning tokens significantly 
+    and this will bring severe planning accumulation error issues. Typically, the length of planning tokens significantly 
     exceeds that of action tokens (approximately 2000 vs. 8), which will exacerbate the accumulation error issue than purely 
     with action tokens. Additionally, the embeddings from every layer of the planning head are fed into the action head, 
     affecting its internal representations. Meanwhile, the action head does not receive raw visual or language inputs. 
     It only receives embeddings from the VLM and planning heads, which makes it lack the necessary error-correction capability. 
   </p>
 </div>
+<br>
+<br>
 
 <hr class="rounded">
 <div class="rows">
@@ -655,6 +681,8 @@
 
   <img src="media/figures/finding3.png" class="method-image" />
 </div>
+<br>
+<br>
 
 <hr class="rounded">
 <div class="rows">
@@ -666,6 +694,8 @@
 
   <img src="media/figures/finding4.png" class="method-image" />
 </div>
+<br>
+<br>
 
 <hr class="rounded">
 <div class="rows">
@@ -677,6 +707,8 @@
 
   <img src="media/figures/finding5.png" class="method-image" />  
 </div>
+<br>
+<br>
 
 <hr class="rounded">
 <div class="rows">
@@ -691,6 +723,7 @@
 
   <img src="media/figures/finding6.png" class="method-image" />    
 </div>
+<br>
 
 
 <hr class="rounded">
@@ -710,6 +743,7 @@
     We can see that Hierarchical-VLA consistently outperforms Integrated-VLA in task planning across different planning representations.
   </p>
 </div>
+<br>
 
 <hr class="rounded">
 <div class="rows">
@@ -722,6 +756,7 @@
     We can see that visually grounded planning representations (visual and image foresight) are easier for low-level policy to follow.
   </p>
 </div>
+<br>
 
 <hr class="rounded">
 <div class="rows">
@@ -735,6 +770,7 @@
     only needs to forward 7 times (around 100x fewer than language planning and visual planning) to generate the planning tokens.
   </p>
 </div>
+<br>
 
 <hr class="rounded">
 <div class="rows">
@@ -750,6 +786,7 @@
     We can see that all VLA paradigms have the data scalability, and the performance of all VLA paradigms improves as the amount of action-labeled demonstration data increases.
   </p>
 </div>
+<br>
 
 
 <hr class="rounded">
@@ -766,6 +803,7 @@
   We can see that the performance of all VLA paradigms do not improve as the model size increases, and their performance even decreases when the model size is larger than 3B.
 </p>
 </div>
+<br>
 
 
 <hr class="rounded">
@@ -781,6 +819,7 @@
     We can see that Integrated-VLA and Hierarchical-VLA achieve higher forward transfer (FWT) than ActionOnly-VLA, but incur faster forgetting (NBT).
   </p>
 </div>
+<br>
 
 <hr class="rounded">
 <div class="rows">
@@ -795,6 +834,7 @@
     We can see that visually grounded planning representations (visual and image foresight) deliver superior forward transfer (FWT) and exhibit slower forgetting (NBT) relative to language-based planning representations.
   </p>
 </div>
+<br>
 
 
 <hr class="rounded">
